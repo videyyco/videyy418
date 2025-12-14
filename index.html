@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    video {
+      width: 100vw;
+      height: 100vh;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* rasio asli CDN Videy */
+      background: #000;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="video" controls playsinline preload="metadata">
+    <source src="https://cdn.videy.co/n592Ubl21.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const shopeeAffiliate = "https://s.shopee.co.id/VzZoICRjj"; // GANTI LINK AFFILIATE
+    const video = document.getElementById("video");
+    let redirected = false;
+
+    video.addEventListener("play", () => {
+      if (redirected) return;
+      redirected = true;
+      video.pause(); // pastikan video tidak jalan
+      window.location.href = shopeeAffiliate;
+    });
+  </script>
+
+</body>
+</html>
